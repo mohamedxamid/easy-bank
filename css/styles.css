@@ -125,6 +125,129 @@ select:-webkit-autofill:focus {
 }
 
 
+/* LOGO */
+.logo {
+    display: flex;
+    
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.logo:active {
+    opacity: 0.6;
+}
+
+.logo__img {
+    width: 140px;
+    height: 20px;
+    object-fit: contain;
+}
+
+
+/* SITENAV */
+.sitenav__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sitenav__item {
+    position: relative;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.sitenav__item:not(:last-child) {
+    margin-right: 30px;
+}
+
+.sitenav__link {
+    display: block;
+    font-size: 14px;
+    line-height: normal;
+    letter-spacing: -0.11px;
+    color: var(--grey-color);
+    text-decoration: none;
+}
+
+.sitenav__link:hover {
+    color: var(--dark-color);
+}
+
+.sitenav__link:active {
+    opacity: 0.6;
+}
+
+.sitenav__link::after {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+    background-image: var(--accent-linear-color);
+    content: "";
+}
+
+.sitenav__link:hover::after {
+    display: block;
+}
+
+
+/* BUTTON */
+.button {
+    position: relative;
+    display: inline-block;
+    padding: 8px 35px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0;
+    color: #fff;
+    background-color: var(--accent-color);
+    background-image: var(--accent-linear-color);
+    border: none;
+    border-radius: 22px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.button:hover::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 22px;
+    content: "";
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.button:active {
+    transform: translateY(2px);
+}
+
+/* SITE-HEADER */
+.site-header {
+    background-color: #fff;
+    z-index: 2;
+}
+
+.site-header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-header__logo {
+    margin-right: 24px;
+}
+
+
 /* MAIN CONTENT */
 .main-content {
     flex-grow: 1;
