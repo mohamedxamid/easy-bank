@@ -66,6 +66,7 @@ body {
     letter-spacing: -0.28px;
     color: var(--grey-color);
     background-color: #fff;
+    overflow-x: hidden;
 }
 
 img {
@@ -251,6 +252,49 @@ select:-webkit-autofill:focus {
 /* MAIN CONTENT */
 .main-content {
     flex-grow: 1;
+}
+
+
+/* HERO */
+.hero {
+    position: relative;
+    z-index: 1;
+    padding-top: 170px;
+    padding-bottom: 170px;
+    background-color: var(--bg-color);
+    background-image: url("../img/hero-bg-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: left calc(50% + 595px) bottom -120px;
+}
+
+.hero__inner {
+    width: 100%;
+    max-width: 447px;
+}
+
+.hero__title {
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-weight: 100;
+    font-size: 56px;
+    line-height: 64px;
+    letter-spacing: -1px;
+    color: var(--dark-color);
+}
+
+.hero__description {
+    margin-top: 0;
+    margin-bottom: 36px;
+}
+
+.hero__img {
+    position: absolute;
+    display: block;
+    width: 730px;
+    height: 900px;
+    object-fit: contain;
+    top: -122px;
+    left: calc(50% + 74px);
 }
 
 
