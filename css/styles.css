@@ -233,6 +233,12 @@ select:-webkit-autofill:focus {
 }
 
 
+/* MENUBAR */
+.menubar-toggler {
+    display: none;
+}
+
+
 /* SOCIALS */
 .socials {
     display: flex;
@@ -263,6 +269,7 @@ select:-webkit-autofill:focus {
 
 /* SITE-HEADER */
 .site-header {
+    position: relative;
     background-color: #fff;
     z-index: 2;
 }
@@ -275,6 +282,18 @@ select:-webkit-autofill:focus {
 
 .site-header__logo {
     margin-right: 24px;
+}
+
+.site-header__menubar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.site-header__sitenav {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -610,4 +629,114 @@ only screen and (                min-resolution: 2dppx) {
 
 /* Retina-specific stuff here */
 
+}
+
+@media only screen and (max-width: 900px) {
+    /* MENUBAR */
+    .menubar-toggler {
+        display: block;
+        position: relative;
+        border: none;
+        width: 30px;
+        height: 20px;
+        background-color: transparent;
+    }
+    
+    .menubar-toggler span,
+    .menubar-toggler span::before,
+    .menubar-toggler span::after {
+        position: absolute;
+        top: 50%; margin-left: -12px;
+        left: 50%; margin-top: -0.5px;
+        width: 24px;
+        height: 1px;
+        background-color: var(--dark-color);
+    }
+    
+    .menubar-toggler span::before,
+    .menubar-toggler span::after {
+        content: "";
+        display: block;
+        transition: transform 0.3s ease;
+    }
+    
+    .menubar-toggler span::before {
+        transform: translateY(-4px);
+    }
+    
+    .menubar-toggler span::after {
+        transform: translateY(4px);
+    }
+    
+    .menubar-toggler--active span {
+        height: 0;
+    }
+    
+    .menubar-toggler--active span::before {
+        transform: rotate(45deg);
+    }
+    
+    .menubar-toggler--active span::after {
+        transform: rotate(-45deg);
+    }
+    
+    
+    /* SITE-HEADER */
+    .site-header__container {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    
+    .site-header__menubar {
+        display: none;
+    }
+
+    .site-header__menubar > .button {
+        display: none;
+    }
+
+    .site-header--active .site-header__menubar {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        height: calc(100vh - 100%);
+        padding: 24px;
+        background: linear-gradient(180deg, #2D314D 0%, rgba(45, 49, 77, 0.00) 100%);
+    }
+
+    .site-header__sitenav {
+        padding: 32px;
+        max-width: 350px;
+        width: 100%;
+        border-radius: 4px;
+        background-color: #fff;
+    }
+
+    .site-header__sitenav .sitenav__list {
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+    }
+
+    .site-header__sitenav .sitenav__item {
+        margin-right: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .site-header__sitenav .sitenav__link {
+        color: var(--dark-color);
+        font-size: 18px;
+        letter-spacing: -0.138px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    /* SITE-HEADER */
+    .site-header__container {
+        padding-top: 22px;
+        padding-bottom: 22px;
+    }
 }
