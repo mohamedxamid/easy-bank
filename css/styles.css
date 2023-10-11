@@ -301,6 +301,7 @@ select:-webkit-autofill:focus {
 /* MAIN CONTENT */
 .main-content {
     flex-grow: 1;
+    overflow-x: hidden;
 }
 
 
@@ -314,7 +315,6 @@ select:-webkit-autofill:focus {
     background-image: url("../img/hero-bg-desktop.svg");
     background-repeat: no-repeat;
     background-position: left calc(50% + 595px) bottom -120px;
-    overflow: hidden;
 }
 
 .hero__inner {
